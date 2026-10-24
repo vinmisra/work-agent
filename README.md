@@ -9,11 +9,11 @@ Approve-to-send is the only mode until the owner decides otherwise. Email is nev
 The agent is one claude.ai skill plus one scheduled task. Its memory is a private Google Doc in the owner's Drive; drafts wait for approval in their Slack DM to themselves.
 
 1. **Connect** Slack, Gmail, Google Drive and Google Calendar in claude.ai, Settings, Connectors, with your work accounts.
-2. **Upload the skill**: claude.ai, Settings, Capabilities, Skills, upload `work-agent-skill.zip` (build it with `bash scripts/build-skill-zip.sh`, or get it from the maintainer).
+2. **Upload the skill**: download https://github.com/vinmisra/work-agent/releases/download/skill/work-agent-skill.zip and upload it at claude.ai, Settings, Capabilities, Skills. That link always serves the latest version (`.github/workflows/publish-skill.yml` rebuilds it on every change to `main`).
 3. **Set up**: in a new chat, say `set up my work agent` and answer its questions (about 15 minutes).
 4. **Schedule**: the setup chat creates the scheduled task, or gives you one prompt to paste into a new scheduled task.
 
-If an item is missing on a Team or Enterprise plan (connectors, skills, scheduled tasks), an org owner has to switch it on. Updating means uploading a newer zip; the memory doc carries over.
+If an item is missing on a Team or Enterprise plan (connectors, skills, scheduled tasks), an org owner has to switch it on. Updating means downloading the same link again and re-uploading; the memory doc carries over.
 
 The skill source is in `skill/work-agent/`: `SKILL.md` (rules and modes), `setup.md`, `check-in.md`, `memory-doc.md`, `messages.md`.
 
