@@ -13,6 +13,8 @@ jobs:
         run: |
           python3 -I -c "import json; json.load(open('.claude-plugin/plugin.json')); json.load(open('.claude-plugin/marketplace.json')); json.load(open('.claude/settings.json'))"
           for f in .claude/skills/*/SKILL.md; do head -1 "$f" | grep -q '^---$' || { echo "$f: missing frontmatter"; exit 1; }; done
+      - name: Skill packages
+        run: bash scripts/build-skill-zip.sh /tmp/work-agent-skill.zip
       - name: No content leaks in state
         run: |
           ! grep -rEn '"(draft_text|body|subject|message)"' state/ || { echo "content field found in state"; exit 1; }

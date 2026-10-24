@@ -2,3 +2,4 @@ state/runs/.current
 state/.export/
 *.local.*
 .DS_Store
+dist/
