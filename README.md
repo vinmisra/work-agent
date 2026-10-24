@@ -6,17 +6,31 @@ Approve-to-send is the only mode until the owner decides otherwise. Email is nev
 
 ## Install (the owner's laptop, once)
 
+Before you start (about 30 minutes, most of it clicking "Connect"):
+
+1. A claude.ai account on a plan that includes Claude Code (Pro, Max, Team or Enterprise). Use the work account if your employer provides one; on Team or Enterprise an org owner may need to enable Claude Code, scheduled tasks and the connectors (see `documents/claude-connector-checklist.md`).
+2. Connect Slack, Gmail, Google Drive and Google Calendar at https://claude.ai/customize/connectors with your work Slack and Google accounts.
+3. A GitHub account, connected to claude.ai at https://claude.ai/connect-github (the Claude GitHub App gets access to your agent repo after step 1 below).
+4. On the laptop: `git`, the GitHub CLI (`brew install gh`, then `gh auth login`), and Claude Code (`curl -fsSL https://claude.ai/install.sh | bash`, then `claude` and `/login` with the account from item 1).
+
+Then:
+
 ```
-# 1. Make a private instance of this template under your GitHub account
-git clone <template-url> work-agent && cd work-agent
+# 1. Make a private copy of this repo under your GitHub account.
+#    (Clone rather than "Use this template": a template copy has unrelated
+#    history, so /update could not pull later fixes.)
+git clone https://github.com/vinmisra/work-agent.git work-agent && cd work-agent
 git remote rename origin upstream
 gh repo create work-agent --private --source=. --remote=origin --push
 
-# 2. Optional: install the plugin so the commands work from any directory
+# 2. Give the Claude GitHub App access to the new private repo:
+#    https://github.com/apps/claude/installations/select_target
+
+# 3. Optional: install the plugin so the commands work from any directory
 claude plugin marketplace add ./
 claude plugin install work-agent@work-agent
 
-# 3. Set up
+# 4. Set up (interactive, about 20 minutes)
 claude
 /setup          # or /work-agent:setup
 /schedule       # prints the three scheduled-task commands

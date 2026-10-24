@@ -31,7 +31,9 @@ fi
 if [ -n "$UPSTREAM" ]; then
   git remote get-url upstream >/dev/null 2>&1 || git remote add upstream "$UPSTREAM"
   if retry git fetch -q upstream main 2>/dev/null; then
-    if ! git merge-base --is-ancestor upstream/main HEAD; then
+    if ! git merge-base HEAD upstream/main >/dev/null 2>&1; then
+      log "run-start: upstream shares no history with this repo (made with 'Use this template'?); skipped. Run /update."
+    elif ! git merge-base --is-ancestor upstream/main HEAD; then
       # Code updates from the template. state/ is always ours.
       if git merge -q --no-edit upstream/main >/dev/null 2>&1; then
         log "run-start: merged code updates from upstream"
