@@ -1,0 +1,18 @@
+name: validate
+on:
+  push:
+  pull_request:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate state files
+        run: bash scripts/validate-state.sh
+      - name: Validate manifests and templates
+        run: |
+          python3 -I -c "import json; json.load(open('.claude-plugin/plugin.json')); json.load(open('.claude-plugin/marketplace.json')); json.load(open('.claude/settings.json'))"
+          for f in .claude/skills/*/SKILL.md; do head -1 "$f" | grep -q '^---$' || { echo "$f: missing frontmatter"; exit 1; }; done
+      - name: No content leaks in state
+        run: |
+          ! grep -rEn '"(draft_text|body|subject|message)"' state/ || { echo "content field found in state"; exit 1; }

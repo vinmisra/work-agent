@@ -1,0 +1,13 @@
+{
+  "name": "work-agent",
+  "description": "Marketplace for the owner's work agent plugin.",
+  "owner": { "name": "Vinith Misra" },
+  "plugins": [
+    {
+      "name": "work-agent",
+      "source": ".",
+      "description": "the owner's work agent: triage, drafts in their voice, proactive tasks, daily brief.",
+      "version": "1.0.0"
+    }
+  ]
+}

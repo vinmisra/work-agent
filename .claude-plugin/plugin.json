@@ -1,0 +1,9 @@
+{
+  "name": "work-agent",
+  "version": "1.0.0",
+  "description": "the owner's work agent: triages Slack and email, drafts replies in their voice for approval, attempts tasks from their notes, and sends a daily brief. Runs as Claude Code scheduled tasks against this repository.",
+  "author": { "name": "Vinith Misra" },
+  "license": "MIT",
+  "keywords": ["slack", "gmail", "drive", "triage", "drafts", "scheduled-tasks"],
+  "skills": "./.claude/skills"
+}

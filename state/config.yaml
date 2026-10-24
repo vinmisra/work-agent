@@ -1,0 +1,74 @@
+# Agent configuration. Edited by /setup; safe to hand-edit.
+# This file holds settings only. It never holds message text, draft text,
+# or document contents (see documents/privacy-and-data-boundaries.md).
+
+owner:
+  name: ""                 # e.g. "Alex"  (set by /setup)
+  slack_user_id: ""        # e.g. "U0123ABC"  (set by /setup from the Slack connector)
+  slack_handle: ""         # e.g. "@owner"
+  email: ""                # their work Google Workspace address
+  timezone: "America/Los_Angeles"
+  work_hours: { start: "09:00", end: "18:00", days: [Mon, Tue, Wed, Thu, Fri] }
+
+review_queue:
+  # Where drafts and briefs are posted for the owner to approve.
+  # "self_dm" = Slack DM to themselves; "channel" = a private channel they own.
+  kind: self_dm
+  channel_id: ""           # set by /setup (the DM channel id or private channel id)
+  channel_name: ""         # e.g. "#work-agent" when kind == channel
+  # How they approve: a reply in the draft's review thread. The Slack connector
+  # exposes no reaction reads, so reactions are not an approval signal.
+  approval_mode: reply
+  approve_words: [approve, approved, send, yes, ship, lgtm, "👍", "✅"]
+  reject_words: [reject, no, skip, drop, "❌", "👎"]
+  edit_prefix: "edit:"     # "edit: <new text>" replaces the draft and sends it
+  expire_after_hours: 72   # drafts they never act on are marked expired
+
+task_log:
+  # Human-readable log. Google Doc by default (created by /setup).
+  kind: google_doc
+  doc_id: ""
+  doc_url: ""
+
+posting:
+  # Approve-to-send is the only mode until they turn a category on below.
+  # Auto-post is OFF for every category by default. Turning one on requires
+  # (a) documents/ai-policy-check.md completed and (b) at least
+  # `auto_post_min_approved` consecutive approvals without edits in that category.
+  auto_post_enabled: false
+  auto_post_categories: []     # e.g. [ack, scheduling]
+  auto_post_min_approved: 10
+  disclosure_suffix: ""        # e.g. "(drafted with AI)" if the policy requires a marker; appended at posting time
+  never_auto_post:             # hard blocks regardless of the above
+    - external_recipient       # anyone outside the company domain
+    - people_topics            # performance, comp, hiring, HR, personal
+    - commitments              # dates, budgets, headcount, promises
+    - executive_audience
+    - legal_or_security
+
+triage:
+  lookback_hours: 24           # first run; afterwards the watermark in seen.json rules
+  max_drafts_per_run: 12
+  max_proactive_tasks_per_run: 3
+  slack:
+    watch: [mentions, dms, group_dms, threads_she_is_in]
+    mention_query: handle      # "userid" (<@U…>) or "handle" (@name); /setup probes which one Slack search honours
+    channels_always: []        # channel ids to read every run even without a mention
+    channels_ignore: []        # e.g. social or bot channels
+  email:
+    watch_labels: [INBOX]
+    ignore_senders: []         # e.g. "noreply@", "calendar-notification@"
+    ignore_subjects_matching: ["^\\[JIRA\\]", "^Automatic reply"]
+  drive:
+    notes_folders: []          # folder ids where their notes and 1:1 docs live
+    notes_docs: []             # doc ids of running notes documents
+
+brief:
+  deliver_to: review_queue     # also appended to the task log doc
+  include_calendar_tomorrow: true
+
+runtime:
+  state_branch: main           # branch the routine commits state to
+  fallback_state_branch: agent-state
+  upstream_remote: ""          # optional: a template repo to pull code updates from
+  model_note: "leave model selection to the routine; do not pin here"

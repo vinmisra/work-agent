@@ -1,0 +1,6 @@
+# Semantic merges for state so two overlapping runs never leave conflict markers.
+state/queue.json merge=statejson
+state/seen.json  merge=statejson
+state/*.jsonl    merge=union
+state/*.md       merge=union
+state/runs/*.md  merge=union

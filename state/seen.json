@@ -1,0 +1,8 @@
+{
+  "_schema": "work-agent/seen/v1",
+  "_doc": "Watermarks so each run only processes new activity. Slack: last processed message ts per channel/thread. Gmail: ISO timestamp of the newest processed message. Drive: modifiedTime per watched doc.",
+  "slack": {},
+  "gmail": { "newest_processed": null },
+  "drive": {},
+  "last_run": { "triage": null, "proactive": null, "brief": null, "approvals": null }
+}

@@ -1,0 +1,6 @@
+{
+  "_schema": "work-agent/queue/v1",
+  "_doc": "Pending and recently closed items. Pointers and status only; never message or draft text. Draft text lives in the Slack review message (draft_ref) or the Gmail draft (gmail_draft_id).",
+  "next_id": 1,
+  "items": []
+}
