@@ -35,11 +35,14 @@ Ask for Slack channels the agent should never read (social, confidential, HR) an
 Read their own writing; never anyone else's into the profile.
 - Slack: search `from:<@USERID>`, paging back to about 300 messages across channels, group DMs and DMs.
 - Gmail: their sent messages from the last 90 days, about 60.
-- Drive: up to 10 Google Docs they own and edited in the last 6 months.
+- Drive: up to 15 Google Docs they own and edited in the last 6 months (`mimeType = 'application/vnd.google-apps.document'`).
+- Drive: up to 8 Google Slides decks they own from the last 6 months (`mimeType = 'application/vnd.google-apps.presentation'`). Read the text: titles, bullets and speaker notes.
 
-Work out, separately for Slack, email and docs: typical length, sentence shape, punctuation and capitalisation, emoji, greetings and sign-offs, words they reach for and words they avoid, how they say no, ask for status, give feedback and thank people, and how they shift between their team, their manager, partners and external people. Write descriptors, not quotes.
+Work out, separately for Slack, email, docs and decks: typical length, sentence shape, punctuation and capitalisation, emoji, greetings and sign-offs, words they reach for and words they avoid, how they say no, ask for status, give feedback and thank people, and how they shift between their team, their manager, partners and external people. Write descriptors, not quotes.
 
-Show them the Voice section and ask for corrections. Then ask once: "Want me to keep up to 10 short examples of your own messages in the memory doc to match your voice better?" Only on a clear yes, add them (each under 200 characters, no other people's names, nothing confidential).
+Also pick **Voice references**: 20 to 40 of their own pieces that best show how they write, at least 3 per kind they actually produce (see `memory-doc.md`), spread across audiences. Prefer pieces that got a good reception or that they clearly put care into. Record a link (Slack permalink, Gmail thread link, Drive link), the kind, the audience and a few words on why. Never copy the text.
+
+Show them the Voice section and the reference list and ask for corrections: anything that does not sound like them comes out, and ask if there are docs or decks they are proud of that you missed. Then ask once: "Want me to keep up to 10 short examples of your own messages in the memory doc to match your voice better?" Only on a clear yes, add them (each under 200 characters, no other people's names, nothing confidential).
 
 To check it, write two sample replies to recent harmless messages of theirs (do not post them) and ask "does this sound like you?" Adjust until it does.
 

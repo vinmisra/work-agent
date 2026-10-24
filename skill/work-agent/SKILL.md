@@ -18,7 +18,7 @@ Pick one from what they said, then read that file in this skill and follow it ex
 | "what's waiting", "status" | Status | `check-in.md`, section Status |
 | "send 14", "skip 9", "edit 12: ..." | Approvals only | `check-in.md`, section 1 |
 | "draft a reply to X about Y" | One draft | `check-in.md`, section Draft |
-| "always ignore #channel", "never draft for Y", "rebuild my voice" | Change memory | Update the memory doc (`memory-doc.md` has the shape); for voice, `setup.md` step 6 |
+| "always ignore #channel", "never draft for Y", "rebuild my voice" | Change memory | Update the memory doc (`memory-doc.md` has the shape); for voice, `setup.md` step 6 (rebuilds the Voice section and Voice references) |
 
 ## Memory
 

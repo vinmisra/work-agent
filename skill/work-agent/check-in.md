@@ -5,7 +5,7 @@ One pass: process their decisions on earlier drafts, look at what is new, draft 
 Start: find and read the memory doc (see SKILL.md). Note the current time in their timezone.
 
 - Outside their work hours or days: do section 1 only, update the memory doc, finish.
-- Otherwise do sections 1 to 4. Then section 5 if `Last note tasks run` is not today. Then section 6 if it is within 90 minutes of the end of their work hours, or later, and `Last brief sent` is not today.
+- Otherwise do sections 1 to 4. Then section 5 if `Last note tasks run` is not today, and 5b if `Last voice refresh` is more than 7 days ago. Then section 6 if it is within 90 minutes of the end of their work hours, or later, and `Last brief sent` is not today.
 - Finish with section 7. Always.
 
 ## 1. Approvals
@@ -26,7 +26,7 @@ Then act:
 - **Note task:** approved closes it; edited means redo it per their note as a new item; skipped closes it.
 - **Skipped Slack draft:** reply `🤖 Skipped.`
 
-For every edit or skip, add a line to Feedback. If they wrote a standing instruction ("always ignore X", "never draft for Y"), add it to Rules with today's date and confirm with `🤖 Got it: <rule>, saved.` If the same kind of edit shows up five times in Feedback, adjust the Voice section to match and say so in the brief.
+For every edit or skip, add a line to Feedback. A draft they approved unchanged is a candidate Voice reference: keep its permalink in Recent log marked `approved as-is` for the weekly refresh. If they wrote a standing instruction ("always ignore X", "never draft for Y"), add it to Rules with today's date and confirm with `🤖 Got it: <rule>, saved.` If the same kind of edit shows up five times in Feedback, adjust the Voice section to match and say so in the brief.
 
 ## 2. Gather new items
 
@@ -67,6 +67,10 @@ Look for things that are clearly theirs and that you can produce as a document o
 
 Do up to `Max note tasks per day`. Results go in a new Google Doc named `Draft: <task>` in the `Agent drafts` folder (create the folder on first use and record its link), starting with two lines: what the task was and where you found it. Never edit their existing docs; if the result is an insertion, put it in the new doc with a note on where it would go. A message draft goes through **Draft** and the review DM instead. Post the note task shape for each. Set `Last note tasks run` to today.
 
+## 5b. Voice refresh (once a week)
+
+On the first check-in of the week (or if `Last voice refresh` is more than 7 days ago): read what they wrote since then (Slack `from:<@USERID>`, sent email, Docs and Slides they own that changed) plus Feedback and drafts marked `approved as-is`. Update the Voice section where their writing or their edits show something new, and swap in better Voice references (keep the list at 20 to 40, never copy text). Mention it in the brief in one line ("voice refreshed: shorter Slack replies, 4 new references"). Set `Last voice refresh` to today.
+
 ## 6. Daily brief (once a day, end of day)
 
 Compose the brief from the review DM and Recent log: what is waiting (oldest first, with age), what got done today, what you could not do today (missing connectors, failed doc updates, things you could not find), and tomorrow from Google Calendar `list_events` (or "calendar not connected"). Post it to the review DM in the shape from `messages.md`. Set `Last brief sent` to today.
@@ -82,7 +86,7 @@ Move watermarks to the newest item you processed (not to now). Trim Recent log t
 3. For a factual question, find the answer: Slack search in the same channel first, then Drive `search_files` full text, then Projects. Keep the link. If you cannot find it, do not draft; it goes under Needs you with "couldn't find the answer".
 4. For a status ask, summarise what is actually in the latest activity.
 5. For scheduling, check Calendar if available. Propose or ask; never commit them to a time.
-6. Write as them: first person, their register for this audience, their length. Answer first, then the one supporting fact or link. No preamble.
+6. Open 2 or 3 Voice references that match this audience and kind (Slack references for a Slack reply, the closest doc or deck for a note task) and read them. Then write as them: first person, matching those references and the Voice section for register, length, openings and phrasing. Answer first, then the one supporting fact or link. No preamble. Imitate the style, never reuse the content.
 7. Never promise dates, budgets, headcount or decisions. Write around it ("let me confirm and come back to you") and say so in the Context line.
 8. If two reasonable answers exist, draft the one their history suggests and name the other in the Context line.
 

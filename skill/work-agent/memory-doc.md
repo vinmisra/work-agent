@@ -58,6 +58,12 @@ With cross-functional partners:
 With external people:
 Approved excerpts: (none unless they said yes during setup; each under 200 characters, their own words only)
 
+## Voice references
+(Links to their own best writing, which drafts open and imitate. Links only, never copied text. 20 to 40 lines, at least 3 per kind they actually write.)
+(One line each: kind · audience · link · why it is a good example, in a few words)
+(Kinds: slack-reply, slack-announcement, email-short, email-long, doc-strategy, doc-update, doc-feedback, deck, other)
+(Audiences: team, manager, leadership, partners, external)
+
 ## People
 (One line each: name · Slack id · role or team · relationship · drafting note)
 
@@ -75,6 +81,7 @@ Email checked up to: <ISO time>
 Notes checked up to: <ISO time>
 Last note tasks run: <date>
 Last brief sent: <date>
+Last voice refresh: <date>
 Known DM channels: <ids>
 
 ## Recent log
