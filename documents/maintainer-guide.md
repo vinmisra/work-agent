@@ -4,15 +4,15 @@ You maintain code, prompts and docs. You never hold the owner's credentials, nev
 
 ## Repos
 
-- **Template** (yours): this repo. `state/` contains only the empty schemas committed here. Mark it as a template repository on GitHub (Settings, Template repository) so the owner can create from it.
-- **The owner's instance**: a private repo under their GitHub account, created from the template. You are not a collaborator. Their scheduled tasks run against it.
+- **Template** (yours): this repo. `state/` contains only the empty schemas committed here. It stays public so the owner can clone or import it. Do not rely on GitHub's "Use this template": the copy it makes has unrelated history, so `/update` and the upstream merge in `run-start.sh` cannot pull your changes into it.
+- **The owner's instance**: a private repo under their GitHub account, cloned or imported from the template. You are not a collaborator. Their scheduled tasks run against it.
 
 ## Creating the owner's instance
 
-The owner does this on their laptop (or on GitHub's web for step 1 in the web-only fallback):
+The owner does this on their laptop (or with GitHub's importer for step 1 in the web-only fallback):
 
 ```
-git clone <template-url> work-agent && cd work-agent
+git clone https://github.com/vinmisra/work-agent.git work-agent && cd work-agent
 git remote rename origin upstream
 gh repo create work-agent --private --source=. --remote=origin --push
 claude
