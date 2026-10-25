@@ -41,28 +41,12 @@ Always draft:
 Ignore:
 Other:
 
-## Voice
-Status: NOT BUILT | BUILT <date> from <sources>
-Slack register:
-Email register:
-Docs register:
-Words and phrases they use:
-Words they never use:
-Saying no / pushing back:
-Asking for status:
-Giving feedback:
-Thanking people:
-With their team:
-With their manager and leadership:
-With cross-functional partners:
-With external people:
-Approved excerpts: (none unless they said yes during setup; each under 200 characters, their own words only)
+## Style
+Status: NOT BUILT | BUILT <date>
+(How they write, by medium and audience: Slack, email, memos and docs, presentations, anything else. Free-form; include excerpts of their own writing and examples where useful.)
 
-## Voice references
-(Links to their own best writing, which drafts open and imitate. Links only, never copied text. 20 to 40 lines, at least 3 per kind they actually write.)
-(One line each: kind · audience · link · why it is a good example, in a few words)
-(Kinds: slack-reply, slack-announcement, email-short, email-long, doc-strategy, doc-update, doc-feedback, deck, other)
-(Audiences: team, manager, leadership, partners, external)
+## References
+(An index of their best pieces, linked, each with a quick description of what it is and what it shows about how they write.)
 
 ## People
 (One line each: name · Slack id · role or team · relationship · drafting note)
@@ -81,7 +65,6 @@ Email checked up to: <ISO time>
 Notes checked up to: <ISO time>
 Last note tasks run: <date>
 Last brief sent: <date>
-Last voice refresh: <date>
 Known DM channels: <ids>
 
 ## Recent log

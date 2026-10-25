@@ -30,25 +30,17 @@ Ask which Google Docs or folders hold their running notes, 1:1 notes and to-do l
 
 Ask for Slack channels the agent should never read (social, confidential, HR) and email senders to ignore. Add common automated senders (noreply@, no-reply@, calendar-notification@, notifications@) unless they object.
 
-## 6. Voice
+## 6. Style guide and references
 
-Read their own writing; never anyone else's into the profile.
-- Slack: search `from:<@USERID>`, paging back to about 300 messages across channels, group DMs and DMs.
-- Gmail: their sent messages from the last 90 days, about 60.
-- Drive: up to 15 Google Docs they own and edited in the last 6 months (`mimeType = 'application/vnd.google-apps.document'`).
-- Drive: up to 8 Google Slides decks they own from the last 6 months (`mimeType = 'application/vnd.google-apps.presentation'`). Read the text: titles, bullets and speaker notes.
+Learn how they write, across everything they write: Slack, email, memos and docs, presentations, and anything else you find. Read as widely and deeply in their own work as you need to; it is their writing that matters, not other people's.
 
-Work out, separately for Slack, email, docs and decks: typical length, sentence shape, punctuation and capitalisation, emoji, greetings and sign-offs, words they reach for and words they avoid, how they say no, ask for status, give feedback and thank people, and how they shift between their team, their manager, partners and external people. Write descriptors, not quotes.
+Write what you learn into the Style section of the memory doc: a description of each medium and audience they write for, in whatever form best captures it, with excerpts and examples where they make the point better than a description would. Build a References index alongside it: links to the pieces that best show how they write, each with a quick description, so a later run can go and read them.
 
-Also pick **Voice references**: 20 to 40 of their own pieces that best show how they write, at least 3 per kind they actually produce (see `memory-doc.md`), spread across audiences. Prefer pieces that got a good reception or that they clearly put care into. Record a link (Slack permalink, Gmail thread link, Drive link), the kind, the audience and a few words on why. Never copy the text.
-
-Show them the Voice section and the reference list and ask for corrections: anything that does not sound like them comes out, and ask if there are docs or decks they are proud of that you missed. Then ask once: "Want me to keep up to 10 short examples of your own messages in the memory doc to match your voice better?" Only on a clear yes, add them (each under 200 characters, no other people's names, nothing confidential).
-
-To check it, write two sample replies to recent harmless messages of theirs (do not post them) and ask "does this sound like you?" Adjust until it does.
+Show them both and ask what's off and what you missed. Then write a couple of sample replies to recent messages (do not post them) and ask whether they sound like them, and refine until they do.
 
 ## 7. People and projects
 
-From their recent Slack messages, list the people they deal with most. Look up names and titles. Ask them to confirm the top 15 and to add their manager, direct reports and key partners, with a drafting note for each if they have one ("keep it short with her", "always cc on launches"). From the channels they post in most and the Drive docs they edited in the last 60 days, list their projects with one-line status and links; ask them to correct it.
+From their recent Slack messages, list the people they deal with most. Look up names and titles. Ask them to confirm and to add their manager, direct reports and key partners, with a drafting note for each if they have one ("keep it short with her", "always cc on launches"). From the channels they post in most and the Drive docs they edited in the last 60 days, list their projects with one-line status and links; ask them to correct it.
 
 ## 8. Save the memory doc
 
